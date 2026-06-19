@@ -629,6 +629,132 @@ body{font-feature-settings:"onum","kern";}
    ============================================================ */
 
 /* ════════════════════════════════════════════════════════════
+   FIX FOTOS — docente photo siempre + hero photo en mobile
+   ════════════════════════════════════════════════════════════ */
+
+/* Fix global: la foto del docente nunca tenía background — corregirlo */
+.d-photo-img{
+  width:100%;
+  height:100%;
+  background-image:var(--portrait);
+  background-size:cover;
+  background-position:50% 14%;
+  display:block;
+  border-radius:inherit;
+}
+
+/* En mobile: foto hero en color natural (sin mix-blend-mode que falla en Safari viejo) */
+@media(max-width:780px){
+  .pframe .pimg{
+    filter:none !important;
+    -webkit-filter:none !important;
+    mix-blend-mode:normal !important;
+  }
+  .pframe::after{
+    background:transparent !important;
+    mix-blend-mode:normal !important;
+    display:none !important;
+  }
+  .pframe::before{
+    background:none !important;
+  }
+  .pframe .p-vignette{
+    background:radial-gradient(120% 88% at 50% 34%,transparent 65%,rgba(44,12,22,.32) 100%) !important;
+  }
+  /* Docente photo: filter más suave en mobile */
+  .docente .d-photo img,
+  .d-photo-img{
+    filter:none !important;
+    -webkit-filter:contrast(1.03) saturate(1.05) !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   MOBILE SIMPLIFICATION — colores sólidos, layout limpio
+   Aplica a cualquier smartphone ≤780px
+   ════════════════════════════════════════════════════════════ */
+@media(max-width:780px){
+  /* ─── HERO: fondo bordeaux sólido (sin radial-gradient que termina en negro) ─── */
+  .hero{
+    background:var(--bordeaux) !important;
+    background-image:linear-gradient(180deg,#5e1f33 0%,#481522 55%,#3d0d1c 100%) !important;
+    background-size:100% 100% !important;
+    animation:none !important;
+  }
+  .hero::before{
+    background:radial-gradient(80% 60% at 30% 25%,rgba(138,109,59,.18),transparent 70%) !important;
+  }
+  /* Dust particles → quitar (en mobile se ven como manchas) */
+  .hero::after{display:none !important;}
+
+  /* ─── Paper texture: deshabilitar mix-blend-mode (oscurece) ─── */
+  .about::after,.whom::after,.outcomes::after,.includes::after,.programa::after,
+  .howto::after,.faq::after,.waitlist::after,
+  .data::after,.credentials::after,.endorsement::after{
+    display:none !important;
+  }
+
+  /* ─── H2 gradient text → fallback a bordeaux sólido ─── */
+  .sec-head h2{
+    background:none !important;
+    -webkit-background-clip:initial !important;
+    background-clip:initial !important;
+    -webkit-text-fill-color:var(--bordeaux) !important;
+    color:var(--bordeaux) !important;
+  }
+
+  /* ─── INTRO: fondo más uniforme, menos dramático ─── */
+  #intro{
+    background:#2c0c16 !important;
+    background-image:radial-gradient(ellipse 100% 70% at 50% 45%,#481522 0%,#2c0c16 70%,#1c0510 100%) !important;
+  }
+  #intro .i-flare{width:340px !important;height:340px !important;}
+
+  /* ─── Secciones bordeaux con color explícito (no gradientes complejos) ─── */
+  .credentials{background:var(--bordeaux) !important;}
+  .qbreak{background:var(--bordeaux-deep) !important;}
+  .closing{background:var(--bordeaux) !important;}
+  .docente{background:var(--cream) !important;}
+  footer{background:var(--bordeaux-deep) !important;}
+
+  /* ─── Side nav: ocultar en mobile (es desktop-only por UX) ─── */
+  .sidenav{display:none !important;}
+
+  /* ─── Marquee más simple sin fade lateral pesado ─── */
+  .marquee::before,.marquee::after{width:60px !important;}
+
+  /* ─── Hero title con tipografía sólida (no efectos raros) ─── */
+  .hero-title .l2{
+    color:var(--gold-soft) !important;
+    -webkit-text-fill-color:var(--gold-soft) !important;
+  }
+
+  /* ─── Topbar: fondo crema sólido al inicio, bordeaux sólido al scrollear ─── */
+  .topbar{background:var(--cream) !important;border-bottom:1px solid var(--line) !important;}
+  .topbar.solid{background:var(--bordeaux-deep) !important;border-bottom:1px solid rgba(217,189,132,.3) !important;}
+
+  /* ─── Stickybar: fondo bordeaux sólido (sin transparencia ni blur) ─── */
+  .stickybar{
+    background:var(--bordeaux-deep) !important;
+    -webkit-backdrop-filter:none !important;
+    backdrop-filter:none !important;
+    border:1px solid rgba(217,189,132,.4) !important;
+  }
+
+  /* ─── Quitar Ken Burns en mobile (puede causar saltos) ─── */
+  .pframe .pimg{animation:none !important;}
+
+  /* ─── Quitar el "breath" del hero gradient ─── */
+  .hero{animation:none !important;}
+
+  /* ─── Custom cursor: ocultar en touch ─── */
+  .cur-dot,.cur-ring{display:none !important;}
+
+  /* ─── Watermarks: opacidad fija (no animar) para evitar render glitches ─── */
+  .sec-watermark{opacity:.04 !important;transform:none !important;transition:none !important;}
+}
+
+/* ════════════════════════════════════════════════════════════
    UNIVERSAL MOBILE — Android, iPhone, Pixel, Samsung, foldables
    ════════════════════════════════════════════════════════════ */
 
@@ -1077,11 +1203,30 @@ section.in .sec-watermark{opacity:.04;transform:translateX(0);}
   #intro{animation:none !important;display:none !important;}
 }
 @media(max-width:600px){
-  #intro .i-name{font-size:30px;}
-  #intro .i-tag{font-size:24px;margin:32px 0;}
+  #intro{padding:0 18px;}
+  #intro .i-phase{padding:0 14px;text-align:center;}
+  #intro .i-name{font-size:28px;text-align:center;}
+  #intro .i-sub{
+    font-size:9.5px !important;
+    letter-spacing:.28em !important;
+    text-align:center !important;
+    max-width:96vw !important;
+    white-space:nowrap;
+    word-wrap:normal;
+  }
+  #intro .i-tag{font-size:22px;margin:32px 0;text-align:center;}
   #intro .i-flare{width:400px;height:400px;}
   @keyframes tagLine{to{width:200px;}}
-  @keyframes lineGrow{to{width:100px;}}
+  @keyframes lineGrow{to{width:90px;}}
+}
+@media(max-width:380px){
+  #intro .i-name{font-size:26px;}
+  #intro .i-sub{
+    font-size:8.5px !important;
+    letter-spacing:.22em !important;
+  }
+  #intro .i-tag{font-size:19px;}
+  @keyframes lineGrow{to{width:80px;}}
 }
 
 /* ─── HERO ALIVE — gradient animado, Ken Burns en foto, atmósfera ─── */
