@@ -730,6 +730,65 @@ body{font-feature-settings:"onum","kern";}
 }
 
 /* ════════════════════════════════════════════════════════════
+   FIXES MOBILE PUNTUALES
+   ════════════════════════════════════════════════════════════ */
+
+/* FIX 3: "Responsabilidad Civil" en UNA sola línea en mobile */
+@media(max-width:680px){
+  .hero-title{
+    font-size:clamp(30px,8.4vw,46px) !important;
+    line-height:1.04 !important;
+    letter-spacing:-.4px !important;
+  }
+  .hero-title .l1 span,
+  .hero-title .l2 span{
+    white-space:nowrap;
+  }
+  .hero-title .l2{
+    font-size:.58em !important;
+    margin-top:.18em !important;
+  }
+}
+@media(max-width:430px){
+  .hero-title{
+    font-size:clamp(26px,8vw,36px) !important;
+  }
+}
+@media(max-width:380px){
+  .hero-title{
+    font-size:24px !important;
+  }
+}
+
+/* FIX 4: Bullet del hero "Régimen específico..." en 2 líneas en mobile (no 3) */
+@media(max-width:680px){
+  .h-bullets li{
+    font-size:13px !important;
+    line-height:1.45 !important;
+    padding-left:16px !important;
+    letter-spacing:-.05px !important;
+  }
+  .h-bullets li::before{width:8px !important;}
+}
+@media(max-width:430px){
+  .h-bullets li{font-size:12.5px !important;}
+}
+
+/* FIX 5: cell "Inversión" centrada (span 2 columnas en mobile) */
+@media(max-width:880px){
+  .data .grid > .dcell:nth-child(5){
+    grid-column:1 / -1 !important;
+    text-align:center;
+    border-right:none !important;
+  }
+  .data .grid > .dcell:nth-child(5) .dl,
+  .data .grid > .dcell:nth-child(5) .dv,
+  .data .grid > .dcell:nth-child(5) .dx{
+    text-align:center !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
    FIX FOTOS — docente photo siempre + hero photo en mobile
    ════════════════════════════════════════════════════════════ */
 
@@ -1732,7 +1791,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{
   .wordmark .sep{display:none !important;}
   .wordmark .wm-seal{width:26px !important;height:26px !important;margin-right:10px !important;}
   .wordmark .r{
-    font-size:13px !important;
+    font-size:12px !important;
     font-style:italic !important;
     white-space:nowrap !important;
     color:var(--gold) !important;
@@ -1740,9 +1799,25 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{
     line-height:1 !important;
   }
   .topbar .bar{height:60px !important;}
+  /* FIX: dar más espacio entre wordmark y bar-right para que no se monte */
+  .bar-right{gap:8px !important;margin-left:12px !important;}
+  /* FIX 1: centrar "RESERVAR CUPO" cuando wrappee */
+  .bar-cta{
+    text-align:center !important;
+    line-height:1.15 !important;
+    padding:10px 14px !important;
+    font-size:10px !important;
+    letter-spacing:.16em !important;
+    white-space:normal !important;
+    max-width:88px !important;
+  }
+}
+/* FIX 2: hide "Centro de formación permanente" en pantallas chicas (≤430px) para evitar overlap con menu */
+@media(max-width:430px){
+  .wordmark .r{display:none !important;}
+  .wordmark .wm-seal{width:26px !important;height:26px !important;}
 }
 @media(max-width:380px){
-  .wordmark .r{font-size:12px !important;}
   .wordmark .wm-seal{width:24px !important;height:24px !important;margin-right:8px !important;}
 }
 
