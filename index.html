@@ -733,30 +733,45 @@ body{font-feature-settings:"onum","kern";}
    FIXES MOBILE PUNTUALES
    ════════════════════════════════════════════════════════════ */
 
-/* FIX 3: "Responsabilidad Civil" en UNA sola línea en mobile */
-@media(max-width:680px){
+/* FIX 3: "Responsabilidad Civil" — tamaño impactante SIN overflow */
+@media(max-width:880px){
   .hero-title{
-    font-size:clamp(30px,8.4vw,46px) !important;
-    line-height:1.04 !important;
+    font-size:clamp(30px,7vw,44px) !important;
+    line-height:1.05 !important;
     letter-spacing:-.4px !important;
+    text-wrap:balance !important;
+    overflow-wrap:break-word !important;
+    word-break:normal !important;
+  }
+  /* Permitir wrap si no entra en una línea (en lugar de cortar el texto) */
+  .hero-title .l1,
+  .hero-title .l2{
+    display:block !important;
+    overflow:visible !important;
   }
   .hero-title .l1 span,
   .hero-title .l2 span{
-    white-space:nowrap;
+    white-space:normal !important;
+    display:inline !important;
   }
   .hero-title .l2{
     font-size:.58em !important;
-    margin-top:.18em !important;
+    margin-top:.14em !important;
   }
 }
 @media(max-width:430px){
   .hero-title{
-    font-size:clamp(26px,8vw,36px) !important;
+    font-size:clamp(26px,6.8vw,32px) !important;
   }
 }
 @media(max-width:380px){
   .hero-title{
-    font-size:24px !important;
+    font-size:clamp(24px,6.6vw,28px) !important;
+  }
+}
+@media(max-width:340px){
+  .hero-title{
+    font-size:22px !important;
   }
 }
 
