@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="theme-color" content="#5E1A2A" />
+<meta name="color-scheme" content="light only" />
+<meta name="supported-color-schemes" content="light" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +13,7 @@
 <title>Curso · Responsabilidad Civil en el Ámbito Empresarial — Pablo Alvarado</title>
 <meta name="description" content="Curso especializado de Responsabilidad Civil en el ámbito empresarial. Tres ejes: responsabilidad civil del empresario, responsabilidad de los administradores de la sociedad anónima y daño moral en la persona jurídica. 6 sesiones online en vivo. Dictado por el Dr. Germán Antonio Orozco Gadea. Avalado por Commenda." />
 <meta property="og:title" content="Curso · Responsabilidad Civil en el Ámbito Empresarial" />
-<meta property="og:description" content="Curso online en vivo dictado por el Dr. Germán Orozco Gadea. Inicia el 2 de julio. Avalado por Commenda." />
+<meta property="og:description" content="Curso online en vivo dictado por el Dr. Germán Orozco Gadea. Inicia el 7 de julio. Avalado por Commenda." />
 <meta property="og:type" content="website" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2232%22%20fill%3D%22%23481522%22/%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2227.5%22%20fill%3D%22none%22%20stroke%3D%22%23b59a63%22%20stroke-width%3D%221.3%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-weight%3D%22700%22%20font-size%3D%2230%22%20fill%3D%22%23f4ede0%22%3EAM%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -2212,6 +2214,218 @@ footer .copy{
   footer .copy{font-size:11px !important;letter-spacing:.04em !important;text-wrap:balance;}
 }
 
+/* ============================================================
+   REFINAMIENTO PREMIUM — paleta de marca (crema · burdeo · oro)
+   Hero editorial en crema con tipografía burdeo/oro + retrato burdeo.
+   Bandas burdeo con profundidad de joya (degradado + viñeta).
+   ============================================================ */
+:root{
+  --gold-deep:#6f5829;
+  --wine-1:#6a2031;   /* burdeo iluminado (parte alta del degradado) */
+  --wine-2:#3f1320;   /* burdeo profundo */
+}
+
+/* —— HERO: composición clara y aireada —— */
+.hero{background:var(--cream) !important;}
+.hero::before{
+  background:
+    radial-gradient(85% 70% at 0% 0%,rgba(138,109,59,.085),transparent 56%),
+    radial-gradient(70% 80% at 100% 100%,rgba(94,26,42,.05),transparent 60%) !important;
+}
+.hero-text{color:var(--ink) !important;}
+.hero .kicker{color:var(--gold-deep) !important;}
+.hero .kicker .dash{background:var(--gold) !important;}
+.hero .badge{
+  background:rgba(138,109,59,.10) !important;
+  border:1px solid rgba(138,109,59,.42) !important;
+  color:#6a3140 !important;
+}
+.hero .badge .dot{background:var(--gold) !important;box-shadow:0 0 0 0 rgba(138,109,59,.5);}
+.hero-title{color:var(--bordeaux) !important;}
+.hero-title .l2 span{color:var(--gold-2) !important;}
+.hook{color:#6a3140 !important;}
+.hook .hook-line2{color:#7a5230 !important;}
+.h-bullets li{color:#46433f !important;}
+.h-bullets li::before{background:var(--gold) !important;}
+.hero-text .btn-gold{
+  background:var(--bordeaux) !important;color:var(--cream) !important;border:1px solid var(--bordeaux) !important;
+}
+.hero-text .btn-gold:hover{
+  background:transparent !important;color:var(--bordeaux) !important;border-color:var(--bordeaux) !important;
+}
+.hero-text .link-cta{color:var(--bordeaux) !important;}
+.hero-text .link-cta .ln{background:var(--gold) !important;}
+.hero .countdown{color:var(--gold-deep) !important;}
+.hero .countdown::before{background:var(--gold) !important;}
+.hero .scroll-cue{color:var(--gold-deep) !important;}
+.hero .scroll-cue .l{background:linear-gradient(var(--gold),transparent) !important;}
+.hero .scroll-cue .l::after{background:var(--gold) !important;}
+/* marcos, esquinas y sello del hero, ahora sobre crema */
+.h-rule{background:rgba(138,109,59,.28) !important;}
+.h-corner.tl,.h-corner.tr,.h-corner.bl,.h-corner.br{border-color:rgba(138,109,59,.5) !important;}
+.h-stamp{background:rgba(94,26,42,.05) !important;border-color:rgba(138,109,59,.45) !important;}
+.h-stamp-num{color:var(--bordeaux) !important;}
+.h-stamp-lbl{color:var(--gold-deep) !important;}
+
+/* —— BANDAS BURDEO: profundidad de joya en vez de muro plano —— */
+#intro{background:radial-gradient(85% 105% at 50% 0%,#581a2c,#37121d 76%) !important;}
+.marquee{background:linear-gradient(180deg,#451522,#37121d) !important;}
+.qbreak{background:radial-gradient(95% 120% at 50% 0%,var(--wine-1),var(--wine-2) 72%) !important;}
+.credentials{background:radial-gradient(80% 130% at 50% 45%,var(--wine-1),var(--wine-2) 78%) !important;}
+.closing{background:radial-gradient(95% 125% at 50% 100%,var(--wine-1),#39131f 74%) !important;}
+.waitlist{background:linear-gradient(180deg,#3d1421,#33111c) !important;}
+footer{background:linear-gradient(180deg,#3a1320,#2e0f1a) !important;}
+/* === CONSISTENCIA ENTRE DISPOSITIVOS Y NAVEGADORES ===
+   Forzar esquema claro (evita que iOS/Android auto-oscurezcan los colores)
+   y blur con prefijo -webkit para Safari. */
+html{color-scheme:light !important;}
+:root{color-scheme:light;}
+
+/* barras flotantes: mismo burdeo limpio, no el café apagado */
+.topbar.solid{background:rgba(80,23,40,.90) !important;}
+.stickybar{
+  background:rgba(80,23,40,.93) !important;
+  -webkit-backdrop-filter:blur(14px) !important;backdrop-filter:blur(14px) !important;
+}
+
+/* encabezado superior en burdeo desde el inicio (no transparente sobre crema) */
+.topbar{
+  background:rgba(80,23,40,.92) !important;
+  -webkit-backdrop-filter:blur(12px) !important;backdrop-filter:blur(12px) !important;
+  border-bottom:1px solid rgba(217,189,132,.26) !important;
+}
+.topbar .wordmark,.topbar .wordmark .wm-name{color:var(--cream) !important;}
+.topbar .wordmark .sep,.topbar .wordmark .r{color:var(--gold-soft) !important;}
+.topbar .wordmark .wm-seal circle{stroke:var(--gold-soft) !important;}
+.topbar .wordmark .wm-seal text{fill:#f4ede0 !important;}
+.topbar .bar-cta{color:var(--gold-soft) !important;border-color:rgba(217,189,132,.5) !important;}
+.topbar .bar-cta:hover{background:var(--gold) !important;color:#fff !important;border-color:var(--gold) !important;}
+.topbar .nav-toggle{border-color:rgba(217,189,132,.5) !important;}
+.topbar .nav-toggle span{background:var(--gold-soft) !important;}
+.topbar .nav-toggle:hover{border-color:var(--gold) !important;}
+.topbar .nav-toggle:hover span{background:var(--gold) !important;}
+
+/* retrato del hero: tonos naturales idénticos en todo navegador/dispositivo */
+.pframe .pimg{
+  filter:contrast(1.04) saturate(1.03) brightness(1.01) !important;
+  -webkit-filter:contrast(1.04) saturate(1.03) brightness(1.01) !important;
+  mix-blend-mode:normal !important;
+}
+.pframe{background:#3a131f !important;}
+
+/* foto del docente: color natural idéntico en todo navegador/dispositivo */
+.d-photo-img,.docente .d-photo img{
+  filter:contrast(1.04) saturate(1.03) brightness(1.0) !important;
+  -webkit-filter:contrast(1.04) saturate(1.03) brightness(1.0) !important;
+  mix-blend-mode:normal !important;
+}
+
+/* === HERO: cascada de líneas que "caen" tras el intro === */
+@keyframes dropLine{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+.hook .hook-line1,.hook .hook-line2{display:block;opacity:0;}
+.hook .hook-line2{margin-top:2px;}
+.go .hook{opacity:1 !important;animation:none !important;}
+.go .hook .hook-line1{animation:dropLine .8s cubic-bezier(.16,1,.3,1) 6.05s both;}
+.go .hook .hook-line2{animation:dropLine .8s cubic-bezier(.16,1,.3,1) 6.23s both;}
+.hero .h-bullets li{opacity:0;}
+.go .h-bullets{opacity:1 !important;animation:none !important;}
+.go .h-bullets li{animation:dropLine .75s cubic-bezier(.16,1,.3,1) both;}
+.go .h-bullets li:nth-child(1){animation-delay:6.41s;}
+.go .h-bullets li:nth-child(2){animation-delay:6.57s;}
+.go .h-bullets li:nth-child(3){animation-delay:6.73s;}
+.go .cta-row{animation:dropLine .8s cubic-bezier(.16,1,.3,1) 6.93s both !important;}
+.go .countdown{animation:dropLine .8s ease 7.11s both !important;}
+@media (prefers-reduced-motion:reduce){
+  .hook .hook-line1,.hook .hook-line2,.hero .h-bullets li{opacity:1 !important;transform:none !important;animation:none !important;}
+}
+
+@media(max-width:880px){
+  /* en mobile el hero se apila: el retrato va arriba, el texto debajo sobre crema */
+  .hero::before{background:radial-gradient(90% 50% at 50% 0%,rgba(138,109,59,.08),transparent 60%) !important;}
+}
+
+/* ════════════════════════════════════════════════════
+   ATELIER — detalles de alta joyería editorial
+   sólo crema · burdeo · oro · sin blend-modes
+   ════════════════════════════════════════════════════ */
+html{scroll-padding-top:88px;}
+body{text-rendering:optimizeLegibility;}
+
+/* selección de texto en marca */
+::selection{background:var(--bordeaux);color:var(--cream);}
+::-moz-selection{background:var(--bordeaux);color:var(--cream);}
+
+/* barra de desplazamiento fina, en marca */
+html{scrollbar-color:var(--gold) #efe6d6;scrollbar-width:thin;}
+::-webkit-scrollbar{width:11px;height:11px;}
+::-webkit-scrollbar-track{background:#efe6d6;}
+::-webkit-scrollbar-thumb{background:var(--gold-2);border:3px solid #efe6d6;border-radius:20px;}
+::-webkit-scrollbar-thumb:hover{background:var(--bordeaux);}
+
+/* foco accesible y elegante */
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{
+  outline:2px solid var(--gold);outline-offset:3px;border-radius:1px;
+}
+
+/* corona de rombo sobre cada encabezado central */
+.sec-head.center{position:relative;}
+.sec-head.center::before{
+  content:"";display:block;width:7px;height:7px;background:var(--gold);
+  transform:rotate(45deg);margin:0 auto 22px;opacity:.9;
+  box-shadow:0 0 0 5px rgba(138,109,59,.07);
+}
+/* filete dorado que se traza bajo el título al revelarse */
+.sec-head.center h2{position:relative;}
+.sec-head.center h2::after{
+  content:"";display:block;width:54px;height:1px;background:var(--gold);
+  margin:20px auto 0;transform:scaleX(0);transform-origin:center;
+  transition:transform 1s cubic-bezier(.16,1,.3,1) .25s;
+}
+.sec-head.center.in h2::after,.reveal.in .sec-head.center h2::after,
+.sec-head.center.reveal.in h2::after{transform:scaleX(1);}
+
+/* brillo dorado que cruza los botones al pasar el cursor */
+.btn{overflow:hidden;}
+.btn::after{
+  content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(244,237,224,.32),transparent);
+  transform:skewX(-18deg);transition:left .8s cubic-bezier(.16,1,.3,1);pointer-events:none;
+}
+.btn:hover::after{left:150%;}
+
+/* tarjetas "¿para quién?" — elevación + marco dorado al hover */
+.whom-card{position:relative;transition:transform .5s cubic-bezier(.16,1,.3,1);}
+.whom-card::before{
+  content:"";position:absolute;inset:-12px -8px;border:1px solid rgba(138,109,59,0);
+  border-radius:3px;transition:border-color .45s ease;pointer-events:none;
+}
+.whom-card:hover{transform:translateY(-6px);}
+.whom-card:hover::before{border-color:rgba(138,109,59,.30);}
+.whom-icon{transition:transform .5s cubic-bezier(.16,1,.3,1);}
+.whom-card:hover .whom-icon{transform:scale(1.08);}
+
+/* celdas de datos — leve elevación */
+.dcell{transition:background .35s ease,transform .35s ease;}
+.dcell:hover{transform:translateY(-3px);}
+
+/* preguntas — sangría sutil al abrir/hover */
+details.faq-item summary{transition:color .3s ease,padding-left .35s ease;}
+details.faq-item summary:hover{padding-left:8px;color:var(--bordeaux-soft);}
+details.faq-item[open] summary{padding-left:8px;}
+
+/* navegación overlay — subrayado dorado que crece desde el centro */
+.nav-overlay nav a{position:relative;}
+.nav-overlay nav a::after{
+  content:"";position:absolute;left:50%;right:50%;bottom:2px;height:1px;
+  background:var(--gold-soft);transition:left .35s ease,right .35s ease;
+}
+.nav-overlay nav a:hover::after{left:20%;right:20%;}
+
+@media (prefers-reduced-motion:reduce){
+  .sec-head.center h2::after{transform:none !important;}
+  .btn::after{display:none !important;}
+}
+
 </style>
 </head>
 <body>
@@ -2303,7 +2517,7 @@ footer .copy{
         <span class="badge"><span class="dot"></span>I Edición · Inscripciones abiertas</span>
       </div>
       <h1 class="hero-title"><span class="l l1"><span>Responsabilidad Civil</span></span><span class="l l2"><span>en el ámbito empresarial</span></span></h1>
-      <p class="hook">Ciertas decisiones empresariales pueden generar responsabilidad civil.<br><span class="hook-line2">Conocerlas a tiempo es la primera línea de defensa.</span></p>
+      <p class="hook"><span class="hook-line1">Ciertas decisiones empresariales pueden generar responsabilidad civil.</span><span class="hook-line2">Conocerlas a tiempo es la primera línea de defensa.</span></p>
       <ul class="h-bullets">
         <li>Marco jurídico de la responsabilidad <br class="brm">civil aplicada a la empresa.</li>
         <li>Régimen específico de los <br class="brm">administradores de la sociedad anónima.</li>
@@ -2336,14 +2550,14 @@ footer .copy{
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span class="marquee-item">I Edición</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Inicia 2 de julio · 2026</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Inicia 7 de julio · 2026</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Martes y jueves · 6:15–8:15 p.m.</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Online en vivo</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Plazas limitadas</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Avalado por Commenda</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Centro de formación permanente</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">I Edición</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Inicia 2 de julio · 2026</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Inicia 7 de julio · 2026</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Martes y jueves · 6:15–8:15 p.m.</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Online en vivo</span><span class="marquee-dot">◆</span>
     <span class="marquee-item">Plazas limitadas</span><span class="marquee-dot">◆</span>
@@ -2355,7 +2569,7 @@ footer .copy{
 <!-- DATA -->
 <div class="data">
   <div class="wrap"><div class="grid stagger">
-    <div class="dcell feat"><div class="dl">Inicio</div><div class="dv">2 de julio · 2026</div></div>
+    <div class="dcell feat"><div class="dl">Inicio</div><div class="dv">7 de julio · 2026</div></div>
     <div class="dcell"><div class="dl">Duración</div><div class="dv">6 sesiones · 12 horas</div><div class="dx">Martes y jueves<br>6:15–8:15 p.m.</div></div>
     <div class="dcell"><div class="dl">Modalidad</div><div class="dv">Online en vivo</div><div class="dx">Plataforma Zoom</div></div>
     <div class="dcell"><div class="dl">Cupos</div><div class="dv">Plazas limitadas</div><div class="dx">Por orden de inscripción</div></div>
@@ -2498,9 +2712,9 @@ footer .copy{
   <div class="wrap">
     <div class="end-inner">
       <div class="end-eyebrow"><span class="dash"></span> Aval académico</div>
-      <div class="end-logo"><svg viewBox="0 0 460 150" xmlns="http://www.w3.org/2000/svg" aria-label="Commenda" role="img"><text x="230" y="68" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="68" font-weight="700" fill="#b59a63" letter-spacing="-1">Commenda</text><line x1="50" y1="92" x2="410" y2="92" stroke="#b59a63" stroke-width="1" opacity="0.55"/><text x="230" y="115" text-anchor="middle" font-family="Libre Franklin,sans-serif" font-size="13" font-weight="600" fill="#b59a63" letter-spacing="3">GRUPO INVESTIGADOR EN DERECHO</text><text x="230" y="135" text-anchor="middle" font-family="Libre Franklin,sans-serif" font-size="13" font-weight="600" fill="#b59a63" letter-spacing="3">DE SOCIEDADES COMPARADO</text></svg></div>
+      <div class="end-logo"><svg viewBox="0 0 460 150" xmlns="http://www.w3.org/2000/svg" aria-label="Commenda" role="img"><text x="230" y="68" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="68" font-weight="700" fill="#b59a63" letter-spacing="-1">Commenda</text><line x1="50" y1="92" x2="410" y2="92" stroke="#b59a63" stroke-width="1" opacity="0.55"/><text x="230" y="115" text-anchor="middle" font-family="Libre Franklin,sans-serif" font-size="13" font-weight="600" fill="#b59a63" letter-spacing="3">GRUPO INVESTIGADOR EN DERECHO</text><text x="230" y="135" text-anchor="middle" font-family="Libre Franklin,sans-serif" font-size="13" font-weight="600" fill="#b59a63" letter-spacing="3">DE SOCIEDADES</text></svg></div>
       <p class="end-text">
-        Este curso es avalado por <strong>Commenda</strong> — Grupo Investigador en Derecho de Sociedades Comparado, portal de referencia en el ámbito del Derecho Mercantil en España, integrado por profesores y expertos de diversas universidades, coordinado y dirigido por el <em>Prof. Dr. José Miguel Embid Irujo</em>, de la Universitat de València, referente en la materia en la región iberoamericana.
+        Este curso es avalado por <strong>Commenda</strong> — Grupo Investigador en Derecho de Sociedades, portal de referencia en el ámbito del Derecho Mercantil en España, integrado por profesores y expertos de diversas universidades, coordinado y dirigido por el <em>Prof. Dr. José Miguel Embid Irujo</em>, de la Universitat de València, referente en la materia en la región iberoamericana.
       </p>
     </div>
   </div>
@@ -2608,7 +2822,7 @@ footer .copy{
       <h2>Todo lo que conviene saber antes de inscribirse.</h2>
     </div>
     <div class="faq-list reveal">
-      <details class="faq-item"><summary>¿Cuál es la modalidad del curso?</summary><div class="faq-a">El curso se imparte en modalidad online, a través de Zoom, los martes y jueves, de 6:15 p.m. a 8:15 p.m., hora de Nicaragua (GMT-6). Son seis sesiones, entre el 2 y el 21 de julio.</div></details>
+      <details class="faq-item"><summary>¿Cuál es la modalidad del curso?</summary><div class="faq-a">El curso se imparte en modalidad online, a través de Zoom, los martes y jueves, de 6:15 p.m. a 8:15 p.m., hora de Nicaragua (GMT-6). Son seis sesiones, entre el 7 y el 23 de julio.</div></details>
       <details class="faq-item"><summary>¿Las sesiones quedan grabadas?</summary><div class="faq-a">Sí. Todas las sesiones se graban y quedan disponibles para los participantes. Esto te permite revisar las clases si no podés conectarte en directo, o repasarlas a tu propio ritmo después del curso.</div></details>
       <details class="faq-item"><summary>¿Necesito ser abogado para inscribirme?</summary><div class="faq-a">No. Aunque el curso tiene un enfoque jurídico y técnico, está pensado también para administradores, miembros de juntas directivas, empresarios y profesionales del ámbito empresarial que necesiten comprender el alcance real de la responsabilidad civil que recae sobre sus decisiones.</div></details>
       <details class="faq-item"><summary>¿Qué temas se abordarán?</summary><div class="faq-a">El curso se articula en tres ejes: (i) responsabilidad civil del empresario; (ii) responsabilidad civil de los miembros de la Junta Directiva de la sociedad anónima; y (iii) el daño moral en la persona jurídica. Cada eje se aborda en dos sesiones —una de marco teórico y normativo, otra de aplicación práctica con casos.</div></details>
@@ -2775,7 +2989,7 @@ footer .copy{
   var prevD=null,prevH=null,prevM=null,prevS=null;
   function rollTo(el,val){val=''+val;var cur=el.querySelector('.rl-cur');if(!cur){el.innerHTML='<span class="rl-cur">'+val+'</span>';return;}if(cur.textContent===val)return;if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){cur.textContent=val;return;}var nx=document.createElement('span');nx.className='rl-nx';nx.textContent=val;el.appendChild(nx);void el.offsetWidth;el.classList.add('rolling');setTimeout(function(){cur.textContent=val;el.classList.remove('rolling');if(nx.parentNode)nx.parentNode.removeChild(nx);},520);}
   function updCountdown(){
-    var target = new Date('2026-07-02T18:15:00-06:00');
+    var target = new Date('2026-07-07T18:15:00-06:00');
     var diff=target-new Date();
     if(diff<=0){
       if(cdEl)cdEl.textContent='El curso ha iniciado.';
